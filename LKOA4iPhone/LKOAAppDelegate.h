@@ -6,10 +6,6 @@
 //  Copyright (c) 2013 DHC. All rights reserved.
 //
 
-// STH
-//JIA
-//jia
-// yuanxiu
 
 #import <UIKit/UIKit.h>
 
