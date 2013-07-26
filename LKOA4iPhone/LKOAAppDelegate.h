@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 DHC. All rights reserved.
 //
 
+// STH
+
 #import <UIKit/UIKit.h>
 
 @interface LKOAAppDelegate : UIResponder <UIApplicationDelegate>
