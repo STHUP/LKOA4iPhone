@@ -12,7 +12,6 @@
 		6C779B6F17A2B8DD00AC2C6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C779B6E17A2B8DD00AC2C6C /* CoreGraphics.framework */; };
 		6C779B7517A2B8DD00AC2C6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C779B7317A2B8DD00AC2C6C /* InfoPlist.strings */; };
 		6C779B7717A2B8DD00AC2C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C779B7617A2B8DD00AC2C6C /* main.m */; };
-		6C779B7B17A2B8DD00AC2C6C /* LKOAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C779B7A17A2B8DD00AC2C6C /* LKOAAppDelegate.m */; };
 		6C779B7D17A2B8DD00AC2C6C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C779B7C17A2B8DD00AC2C6C /* Default.png */; };
 		6C779B7F17A2B8DD00AC2C6C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C779B7E17A2B8DD00AC2C6C /* Default@2x.png */; };
 		6C779B8117A2B8DD00AC2C6C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C779B8017A2B8DD00AC2C6C /* Default-568h@2x.png */; };
@@ -32,6 +31,7 @@
 		6C89109817A36AFB0019CEF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109717A36AFB0019CEF8 /* CFNetwork.framework */; };
 		8D587C7417A373ED009E9B64 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7017A373ED009E9B64 /* Transfer.m */; };
 		8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7317A373ED009E9B64 /* LoginViewController.m */; };
+		8D587C7B17A375DC009E9B64 /* LKOAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +43,6 @@
 		6C779B7417A2B8DD00AC2C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6C779B7617A2B8DD00AC2C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C779B7817A2B8DD00AC2C6C /* LKOA4iPhone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LKOA4iPhone-Prefix.pch"; sourceTree = "<group>"; };
-		6C779B7917A2B8DD00AC2C6C /* LKOAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LKOAAppDelegate.h; path = ../LKOAAppDelegate.h; sourceTree = "<group>"; };
-		6C779B7A17A2B8DD00AC2C6C /* LKOAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LKOAAppDelegate.m; path = ../LKOAAppDelegate.m; sourceTree = "<group>"; };
 		6C779B7C17A2B8DD00AC2C6C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6C779B7E17A2B8DD00AC2C6C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6C779B8017A2B8DD00AC2C6C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -78,6 +76,8 @@
 		8D587C7017A373ED009E9B64 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
 		8D587C7217A373ED009E9B64 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8D587C7317A373ED009E9B64 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8D587C7917A375DC009E9B64 /* LKOAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKOAAppDelegate.h; path = LKOA4iPhone/LKOAAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKOAAppDelegate.m; path = LKOA4iPhone/LKOAAppDelegate.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,10 +174,10 @@
 		6C89106017A355440019CEF8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8D587C7917A375DC009E9B64 /* LKOAAppDelegate.h */,
+				8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */,
 				8D587C6D17A373ED009E9B64 /* Client */,
 				8D587C7117A373ED009E9B64 /* ViewController */,
-				6C779B7917A2B8DD00AC2C6C /* LKOAAppDelegate.h */,
-				6C779B7A17A2B8DD00AC2C6C /* LKOAAppDelegate.m */,
 				6C89108417A35D9E0019CEF8 /* Model */,
 				6C89108517A35D9E0019CEF8 /* TableViewCell */,
 				6C89108617A35D9E0019CEF8 /* Utility */,
@@ -350,7 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C779B7717A2B8DD00AC2C6C /* main.m in Sources */,
-				6C779B7B17A2B8DD00AC2C6C /* LKOAAppDelegate.m in Sources */,
 				6C89107817A3558E0019CEF8 /* AFHTTPClient.m in Sources */,
 				6C89107917A3558E0019CEF8 /* AFHTTPRequestOperation.m in Sources */,
 				6C89107A17A3558E0019CEF8 /* AFImageRequestOperation.m in Sources */,
@@ -363,6 +362,7 @@
 				6C89108117A3558E0019CEF8 /* JSBadgeView.m in Sources */,
 				8D587C7417A373ED009E9B64 /* Transfer.m in Sources */,
 				8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */,
+				8D587C7B17A375DC009E9B64 /* LKOAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
