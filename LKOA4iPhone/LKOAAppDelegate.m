@@ -32,6 +32,7 @@
     if ([UserDefaults boolForKey:kFIRSTLaunched]) {
         // 设置默认的IP地址
         [UserDefaults setObject:@"124.205.53.178:9596" forKey:kHOSTNAME];
+        [UserDefaults synchronize];
     }
     
     return YES;

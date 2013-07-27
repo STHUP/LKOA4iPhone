@@ -16,3 +16,7 @@
 #define kFIRSTLaunched                  @"firstLaunched"
 
 #define kHOSTNAME                       @"hostName"
+
+#define kWebServiceName                 @"webServiceName"
+#define kMethodName                     @"methodName"
+#define kParamName                      @"paramName"
