@@ -20,12 +20,12 @@
     
     
     // 判断程序以前是否有登录过，是否是第一次运行程序
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kEVERLaunched]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kEVERLaunched];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFIRSTLaunched];
     }
     else{
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kFIRSTLaunched];
     }
     
     
