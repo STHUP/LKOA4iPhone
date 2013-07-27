@@ -72,9 +72,9 @@
     
     _selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_selectButton setFrame:CGRectMake(TF_X2, TF_Y2+INTERVAL_H_1+50, 17, 17)];
-    [_selectButton setImage:[UIImage imageNamed:@"select_button_n"] forState:UIControlStateDisabled];
+    [_selectButton setImage:[UIImage imageNamed:@"select_button_n"] forState:UIControlStateNormal];
     [_selectButton setImage:[UIImage imageNamed:@"select_button_s"] forState:UIControlStateSelected];
-    [_selectButton setImage:[UIImage imageNamed:@"select_button_n"] forState:UIControlStateHighlighted];
+    [_selectButton setImage:[UIImage imageNamed:@"select_button_s"] forState:UIControlStateHighlighted];
     
     [self.view addSubview:_selectButton];
     
