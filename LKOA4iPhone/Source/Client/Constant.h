@@ -14,3 +14,5 @@
 
 #define kEVERLaunched                   @"everLaunched"
 #define kFIRSTLaunched                  @"firstLaunched"
+
+#define kHOSTNAME                       @"hostName"

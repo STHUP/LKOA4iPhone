@@ -20,14 +20,20 @@
     
     
     // 判断程序以前是否有登录过，是否是第一次运行程序
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kEVERLaunched]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kEVERLaunched];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFIRSTLaunched];
+    if (![UserDefaults boolForKey:kEVERLaunched]) {
+        [UserDefaults setBool:YES forKey:kEVERLaunched];
+        [UserDefaults setBool:YES forKey:kFIRSTLaunched];
     }
     else{
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kFIRSTLaunched];
+        [UserDefaults setBool:NO forKey:kFIRSTLaunched];
     }
     
+    
+    // 如果程序是第一次运行
+    if ([UserDefaults boolForKey:kFIRSTLaunched]) {
+        // 设置默认的IP地址
+        [UserDefaults setObject:@"124.205.53.178:9596" forKey:kHOSTNAME];
+    }
     
     return YES;
 }
