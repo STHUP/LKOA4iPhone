@@ -26,6 +26,11 @@
 		6C89107F17A3558E0019CEF8 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89107217A3558E0019CEF8 /* AFXMLRequestOperation.m */; };
 		6C89108017A3558E0019CEF8 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89107417A3558E0019CEF8 /* UIImageView+AFNetworking.m */; };
 		6C89108117A3558E0019CEF8 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89107717A3558E0019CEF8 /* JSBadgeView.m */; };
+		6C89108A17A35E650019CEF8 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89108917A35E650019CEF8 /* Transfer.m */; };
+		6C89109217A369E60019CEF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109117A369E60019CEF8 /* SystemConfiguration.framework */; };
+		6C89109417A369ED0019CEF8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */; };
+		6C89109617A36AF00019CEF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109517A36AF00019CEF8 /* Security.framework */; };
+		6C89109817A36AFB0019CEF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109717A36AFB0019CEF8 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,13 @@
 		6C89107417A3558E0019CEF8 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		6C89107617A3558E0019CEF8 /* JSBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBadgeView.h; sourceTree = "<group>"; };
 		6C89107717A3558E0019CEF8 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBadgeView.m; sourceTree = "<group>"; };
+		6C89108817A35E650019CEF8 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
+		6C89108917A35E650019CEF8 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
+		6C89108B17A360AB0019CEF8 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		6C89109117A369E60019CEF8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6C89109517A36AF00019CEF8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6C89109717A36AFB0019CEF8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C89109817A36AFB0019CEF8 /* CFNetwork.framework in Frameworks */,
+				6C89109617A36AF00019CEF8 /* Security.framework in Frameworks */,
+				6C89109417A369ED0019CEF8 /* MobileCoreServices.framework in Frameworks */,
+				6C89109217A369E60019CEF8 /* SystemConfiguration.framework in Frameworks */,
 				6C779B6B17A2B8DD00AC2C6C /* UIKit.framework in Frameworks */,
 				6C779B6D17A2B8DD00AC2C6C /* Foundation.framework in Frameworks */,
 				6C779B6F17A2B8DD00AC2C6C /* CoreGraphics.framework in Frameworks */,
@@ -99,6 +115,10 @@
 		6C779B6917A2B8DC00AC2C6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C89109717A36AFB0019CEF8 /* CFNetwork.framework */,
+				6C89109517A36AF00019CEF8 /* Security.framework */,
+				6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */,
+				6C89109117A369E60019CEF8 /* SystemConfiguration.framework */,
 				6C779B6A17A2B8DD00AC2C6C /* UIKit.framework */,
 				6C779B6C17A2B8DD00AC2C6C /* Foundation.framework */,
 				6C779B6E17A2B8DD00AC2C6C /* CoreGraphics.framework */,
@@ -152,6 +172,12 @@
 			children = (
 				6C779B7917A2B8DD00AC2C6C /* LKOAAppDelegate.h */,
 				6C779B7A17A2B8DD00AC2C6C /* LKOAAppDelegate.m */,
+				6C89108217A35D9E0019CEF8 /* Client */,
+				6C89108317A35D9E0019CEF8 /* CustomView */,
+				6C89108417A35D9E0019CEF8 /* Model */,
+				6C89108517A35D9E0019CEF8 /* TableViewCell */,
+				6C89108617A35D9E0019CEF8 /* Utility */,
+				6C89108717A35D9E0019CEF8 /* ViewController */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -189,6 +215,51 @@
 				6C89107717A3558E0019CEF8 /* JSBadgeView.m */,
 			);
 			path = JSBadgeView;
+			sourceTree = "<group>";
+		};
+		6C89108217A35D9E0019CEF8 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				6C89108B17A360AB0019CEF8 /* Constant.h */,
+				6C89108817A35E650019CEF8 /* Transfer.h */,
+				6C89108917A35E650019CEF8 /* Transfer.m */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		6C89108317A35D9E0019CEF8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		6C89108417A35D9E0019CEF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C89108517A35D9E0019CEF8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		6C89108617A35D9E0019CEF8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		6C89108717A35D9E0019CEF8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +340,7 @@
 				6C89107F17A3558E0019CEF8 /* AFXMLRequestOperation.m in Sources */,
 				6C89108017A3558E0019CEF8 /* UIImageView+AFNetworking.m in Sources */,
 				6C89108117A3558E0019CEF8 /* JSBadgeView.m in Sources */,
+				6C89108A17A35E650019CEF8 /* Transfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +383,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -335,7 +407,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -348,6 +420,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LKOA4iPhone/LKOA4iPhone-Prefix.pch";
 				INFOPLIST_FILE = "LKOA4iPhone/LKOA4iPhone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -359,6 +432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LKOA4iPhone/LKOA4iPhone-Prefix.pch";
 				INFOPLIST_FILE = "LKOA4iPhone/LKOA4iPhone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
