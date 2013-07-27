@@ -12,5 +12,6 @@
 @interface LKOAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic) UINavigationController *rootNavigationController;
 
 @end
