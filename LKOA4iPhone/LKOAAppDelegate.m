@@ -8,7 +8,9 @@
 
 #import "LKOAAppDelegate.h"
 #import "LoginViewController.h"
+
 @implementation LKOAAppDelegate
+
 @synthesize rootNavigationController = _rootNavigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
