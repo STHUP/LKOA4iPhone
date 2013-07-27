@@ -50,9 +50,10 @@
 		6C8910C317A3A36B0019CEF8 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C8910AE17A3A36A0019CEF8 /* navbar@2x.png */; };
 		6C8910C417A3A36B0019CEF8 /* select_button_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C8910AF17A3A36A0019CEF8 /* select_button_n@2x.png */; };
 		6C8910C517A3A36B0019CEF8 /* select_button_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C8910B017A3A36A0019CEF8 /* select_button_s@2x.png */; };
-		6CF7933017A3BA1300843A21 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7932F17A3BA1300843A21 /* Model.m */; };
-		6CF7933317A3BA2400843A21 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7933217A3BA2400843A21 /* Cell.m */; };
-		6CF7933617A3BA3600843A21 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7933517A3BA3600843A21 /* Util.m */; };
+		6CF7933D17A3BB4C00843A21 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7933C17A3BB4C00843A21 /* Cell.m */; };
+		6CF7934017A3BB7600843A21 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7933F17A3BB7600843A21 /* Model.m */; };
+		6CF7934317A3BB8200843A21 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7934217A3BB8200843A21 /* Util.m */; };
+		6CF7934617A3BB9F00843A21 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7934517A3BB9F00843A21 /* View.m */; };
 		8D587C7417A373ED009E9B64 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7017A373ED009E9B64 /* Transfer.m */; };
 		8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7317A373ED009E9B64 /* LoginViewController.m */; };
 		8D587C7B17A375DC009E9B64 /* LKOAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */; };
@@ -117,12 +118,14 @@
 		6C8910AE17A3A36A0019CEF8 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
 		6C8910AF17A3A36A0019CEF8 /* select_button_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_button_n@2x.png"; sourceTree = "<group>"; };
 		6C8910B017A3A36A0019CEF8 /* select_button_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_button_s@2x.png"; sourceTree = "<group>"; };
-		6CF7932E17A3BA1300843A21 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = SOURCE_ROOT; };
-		6CF7932F17A3BA1300843A21 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = SOURCE_ROOT; };
-		6CF7933117A3BA2400843A21 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = SOURCE_ROOT; };
-		6CF7933217A3BA2400843A21 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = SOURCE_ROOT; };
-		6CF7933417A3BA3600843A21 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = SOURCE_ROOT; };
-		6CF7933517A3BA3600843A21 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = SOURCE_ROOT; };
+		6CF7933B17A3BB4C00843A21 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		6CF7933C17A3BB4C00843A21 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		6CF7933E17A3BB7600843A21 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		6CF7933F17A3BB7600843A21 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		6CF7934117A3BB8200843A21 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		6CF7934217A3BB8200843A21 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		6CF7934417A3BB9F00843A21 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		6CF7934517A3BB9F00843A21 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
 		8D587C6E17A373ED009E9B64 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		8D587C6F17A373ED009E9B64 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
 		8D587C7017A373ED009E9B64 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
@@ -223,10 +226,11 @@
 				8D587C7917A375DC009E9B64 /* LKOAAppDelegate.h */,
 				8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */,
 				8D587C6D17A373ED009E9B64 /* Client */,
+				6CF7933717A3BAFD00843A21 /* CustomView */,
+				6CF7933817A3BAFD00843A21 /* Model */,
+				6CF7933A17A3BB4C00843A21 /* TableViewCell */,
+				6CF7933917A3BAFD00843A21 /* Utility */,
 				8D587C7117A373ED009E9B64 /* ViewController */,
-				6C89108417A35D9E0019CEF8 /* Model */,
-				6C89108517A35D9E0019CEF8 /* TableViewCell */,
-				6C89108617A35D9E0019CEF8 /* Utility */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -264,33 +268,6 @@
 				6C89107717A3558E0019CEF8 /* JSBadgeView.m */,
 			);
 			path = JSBadgeView;
-			sourceTree = "<group>";
-		};
-		6C89108417A35D9E0019CEF8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6CF7932E17A3BA1300843A21 /* Model.h */,
-				6CF7932F17A3BA1300843A21 /* Model.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6C89108517A35D9E0019CEF8 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				6CF7933117A3BA2400843A21 /* Cell.h */,
-				6CF7933217A3BA2400843A21 /* Cell.m */,
-			);
-			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		6C89108617A35D9E0019CEF8 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				6CF7933417A3BA3600843A21 /* Util.h */,
-				6CF7933517A3BA3600843A21 /* Util.m */,
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		6C89109917A3A36A0019CEF8 /* Image */ = {
@@ -335,6 +312,42 @@
 				6C8910B017A3A36A0019CEF8 /* select_button_s@2x.png */,
 			);
 			path = "Image640*960";
+			sourceTree = "<group>";
+		};
+		6CF7933717A3BAFD00843A21 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7934417A3BB9F00843A21 /* View.h */,
+				6CF7934517A3BB9F00843A21 /* View.m */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		6CF7933817A3BAFD00843A21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7933E17A3BB7600843A21 /* Model.h */,
+				6CF7933F17A3BB7600843A21 /* Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CF7933917A3BAFD00843A21 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7934117A3BB8200843A21 /* Util.h */,
+				6CF7934217A3BB8200843A21 /* Util.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		6CF7933A17A3BB4C00843A21 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7933B17A3BB4C00843A21 /* Cell.h */,
+				6CF7933C17A3BB4C00843A21 /* Cell.m */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		8D587C6D17A373ED009E9B64 /* Client */ = {
@@ -460,9 +473,10 @@
 				8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */,
 				8D587C7B17A375DC009E9B64 /* LKOAAppDelegate.m in Sources */,
 				8D587C7E17A37693009E9B64 /* BaseViewController.m in Sources */,
-				6CF7933017A3BA1300843A21 /* Model.m in Sources */,
-				6CF7933317A3BA2400843A21 /* Cell.m in Sources */,
-				6CF7933617A3BA3600843A21 /* Util.m in Sources */,
+				6CF7933D17A3BB4C00843A21 /* Cell.m in Sources */,
+				6CF7934017A3BB7600843A21 /* Model.m in Sources */,
+				6CF7934317A3BB8200843A21 /* Util.m in Sources */,
+				6CF7934617A3BB9F00843A21 /* View.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
