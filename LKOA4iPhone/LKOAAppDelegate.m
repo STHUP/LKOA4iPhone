@@ -28,7 +28,6 @@
         [UserDefaults setBool:NO forKey:kFIRSTLaunched];
     }
     
-    
     // 如果程序是第一次运行
     if ([UserDefaults boolForKey:kFIRSTLaunched]) {
         // 设置默认的IP地址
