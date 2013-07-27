@@ -177,7 +177,6 @@
 		6C779B7017A2B8DD00AC2C6C /* LKOA4iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				8D587C7617A374C0009E9B64 /* Image */,
 				6C89106017A355440019CEF8 /* Source */,
 				6C89105E17A355440019CEF8 /* External */,
 				6C89105F17A355440019CEF8 /* Image */,
@@ -307,29 +306,6 @@
 				8D587C7317A373ED009E9B64 /* LoginViewController.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		8D587C7617A374C0009E9B64 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				8D587C7717A374C0009E9B64 /* Image480*640 */,
-				8D587C7817A374C0009E9B64 /* Image640*960 */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		8D587C7717A374C0009E9B64 /* Image480*640 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Image480*640";
-			sourceTree = "<group>";
-		};
-		8D587C7817A374C0009E9B64 /* Image640*960 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Image640*960";
 			sourceTree = "<group>";
 		};
 		8D587C8017A3779E009E9B64 /* Image640*960 */ = {
