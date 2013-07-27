@@ -7,13 +7,19 @@
 //
 
 #import "LKOAAppDelegate.h"
-
+#import "LoginViewController.h"
 @implementation LKOAAppDelegate
+@synthesize rootNavigationController = _rootNavigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    self.rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    self.window.rootViewController = self.rootNavigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
@@ -27,6 +33,7 @@
     else{
         [UserDefaults setBool:NO forKey:kFIRSTLaunched];
     }
+    
     
     // 如果程序是第一次运行
     if ([UserDefaults boolForKey:kFIRSTLaunched]) {
