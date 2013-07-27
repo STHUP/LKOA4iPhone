@@ -26,11 +26,12 @@
 		6C89107F17A3558E0019CEF8 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89107217A3558E0019CEF8 /* AFXMLRequestOperation.m */; };
 		6C89108017A3558E0019CEF8 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89107417A3558E0019CEF8 /* UIImageView+AFNetworking.m */; };
 		6C89108117A3558E0019CEF8 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89107717A3558E0019CEF8 /* JSBadgeView.m */; };
-		6C89108A17A35E650019CEF8 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C89108917A35E650019CEF8 /* Transfer.m */; };
 		6C89109217A369E60019CEF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109117A369E60019CEF8 /* SystemConfiguration.framework */; };
 		6C89109417A369ED0019CEF8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */; };
 		6C89109617A36AF00019CEF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109517A36AF00019CEF8 /* Security.framework */; };
 		6C89109817A36AFB0019CEF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89109717A36AFB0019CEF8 /* CFNetwork.framework */; };
+		8D587C7417A373ED009E9B64 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7017A373ED009E9B64 /* Transfer.m */; };
+		8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7317A373ED009E9B64 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,13 +69,15 @@
 		6C89107417A3558E0019CEF8 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		6C89107617A3558E0019CEF8 /* JSBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBadgeView.h; sourceTree = "<group>"; };
 		6C89107717A3558E0019CEF8 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBadgeView.m; sourceTree = "<group>"; };
-		6C89108817A35E650019CEF8 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
-		6C89108917A35E650019CEF8 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
-		6C89108B17A360AB0019CEF8 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		6C89109117A369E60019CEF8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6C89109517A36AF00019CEF8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6C89109717A36AFB0019CEF8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8D587C6E17A373ED009E9B64 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		8D587C6F17A373ED009E9B64 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
+		8D587C7017A373ED009E9B64 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
+		8D587C7217A373ED009E9B64 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8D587C7317A373ED009E9B64 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 		6C779B7017A2B8DD00AC2C6C /* LKOA4iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				8D587C7617A374C0009E9B64 /* Image */,
 				6C89106017A355440019CEF8 /* Source */,
 				6C89105E17A355440019CEF8 /* External */,
 				6C89105F17A355440019CEF8 /* Image */,
@@ -170,14 +174,13 @@
 		6C89106017A355440019CEF8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8D587C6D17A373ED009E9B64 /* Client */,
+				8D587C7117A373ED009E9B64 /* ViewController */,
 				6C779B7917A2B8DD00AC2C6C /* LKOAAppDelegate.h */,
 				6C779B7A17A2B8DD00AC2C6C /* LKOAAppDelegate.m */,
-				6C89108217A35D9E0019CEF8 /* Client */,
-				6C89108317A35D9E0019CEF8 /* CustomView */,
 				6C89108417A35D9E0019CEF8 /* Model */,
 				6C89108517A35D9E0019CEF8 /* TableViewCell */,
 				6C89108617A35D9E0019CEF8 /* Utility */,
-				6C89108717A35D9E0019CEF8 /* ViewController */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -217,23 +220,6 @@
 			path = JSBadgeView;
 			sourceTree = "<group>";
 		};
-		6C89108217A35D9E0019CEF8 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				6C89108B17A360AB0019CEF8 /* Constant.h */,
-				6C89108817A35E650019CEF8 /* Transfer.h */,
-				6C89108917A35E650019CEF8 /* Transfer.m */,
-			);
-			path = Client;
-			sourceTree = "<group>";
-		};
-		6C89108317A35D9E0019CEF8 /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomView;
-			sourceTree = "<group>";
-		};
 		6C89108417A35D9E0019CEF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,11 +241,46 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		6C89108717A35D9E0019CEF8 /* ViewController */ = {
+		8D587C6D17A373ED009E9B64 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				8D587C6E17A373ED009E9B64 /* Constant.h */,
+				8D587C6F17A373ED009E9B64 /* Transfer.h */,
+				8D587C7017A373ED009E9B64 /* Transfer.m */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		8D587C7117A373ED009E9B64 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D587C7217A373ED009E9B64 /* LoginViewController.h */,
+				8D587C7317A373ED009E9B64 /* LoginViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8D587C7617A374C0009E9B64 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8D587C7717A374C0009E9B64 /* Image480*640 */,
+				8D587C7817A374C0009E9B64 /* Image640*960 */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		8D587C7717A374C0009E9B64 /* Image480*640 */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewController;
+			path = "Image480*640";
+			sourceTree = "<group>";
+		};
+		8D587C7817A374C0009E9B64 /* Image640*960 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Image640*960";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,7 +361,8 @@
 				6C89107F17A3558E0019CEF8 /* AFXMLRequestOperation.m in Sources */,
 				6C89108017A3558E0019CEF8 /* UIImageView+AFNetworking.m in Sources */,
 				6C89108117A3558E0019CEF8 /* JSBadgeView.m in Sources */,
-				6C89108A17A35E650019CEF8 /* Transfer.m in Sources */,
+				8D587C7417A373ED009E9B64 /* Transfer.m in Sources */,
+				8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
