@@ -112,8 +112,6 @@ static Transfer  *instance;
      NSLog(@"---%@:", elementName);
 }
 
-
-
 -(void) parserDidEndDocument:(NSXMLParser *)parser {
     self.successBlock(self.respDic);
 }
