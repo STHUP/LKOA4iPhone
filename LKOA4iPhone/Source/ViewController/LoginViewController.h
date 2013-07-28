@@ -12,6 +12,9 @@
 
 @property(nonatomic, strong)UITextField *userTF;
 @property(nonatomic, strong)UITextField *pwdTF;
-@property(nonatomic, strong)UIButton *selectButton;
+@property(nonatomic, strong)UIButton *remeberPwdButton;
+@property(nonatomic, strong)UIButton *autoLoginButton;
+@property(nonatomic, assign)BOOL isRemeber;
+@property(nonatomic, assign)BOOL isAutoLogin;
 
 @end

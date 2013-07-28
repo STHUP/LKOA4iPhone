@@ -10,6 +10,6 @@
 
 @interface BaseViewController : UIViewController<UITextFieldDelegate>
 
-@property(assign, nonatomic)BOOL hasNav;
-
+@property(nonatomic, assign)BOOL hasCheckButton;
+@property(nonatomic, assign)BOOL hasHomeButton;
 @end
