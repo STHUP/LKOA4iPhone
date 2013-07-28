@@ -63,6 +63,9 @@ typedef enum {
 /**
  * @discussion optionally init using this method to have the badge automatically added to another view.
  */
-- (id)initWithParentView:(UIView *)parentView alignment:(JSBadgeViewAlignment)alignment;
+@property(nonatomic, assign)int topRightX;
+@property(nonatomic, assign)int topRightY;
+
+- (id)initWithParentView:(UIView *)parentView alignment:(JSBadgeViewAlignment)alignment topRightX:(int) x topRightY:(int) y;
 
 @end
