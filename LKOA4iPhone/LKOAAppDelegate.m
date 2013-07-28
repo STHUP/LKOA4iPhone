@@ -44,6 +44,29 @@
         [UserDefaults synchronize];
     }
     
+    
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"LoginService.asmx" forKey:kWebServiceName];
+    [dic setObject:@"getLoginInfoService" forKey:kMethodName];
+    
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
+    [tempDic setObject:@"LogIn" forKey:@"Function"];
+    [tempDic setObject:@"qiaolei" forKey:@"UserName"];
+    [tempDic setObject:@"111" forKey:@"PassWord"];
+    [tempDic setObject:@"WAP" forKey:@"LoginType"];
+    NSDictionary *qryDic = [NSDictionary dictionaryWithObjectsAndKeys:tempDic, @"Qry", nil];
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+    [paramDic setObject:qryDic forKey:@"sLoginXML"];
+
+    [dic setObject:paramDic forKey:kParamName];
+    
+    [[Transfer sharedInstance] Transfer:dic success:^(NSDictionary *dic) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
     return YES;
 }
 

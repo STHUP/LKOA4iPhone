@@ -54,6 +54,14 @@
 		6CF7934017A3BB7600843A21 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7933F17A3BB7600843A21 /* Model.m */; };
 		6CF7934317A3BB8200843A21 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7934217A3BB8200843A21 /* Util.m */; };
 		6CF7934617A3BB9F00843A21 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7934517A3BB9F00843A21 /* View.m */; };
+		6CF7934917A4941500843A21 /* Transfer+ParseXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7934817A4941500843A21 /* Transfer+ParseXML.m */; };
+		6CF7934D17A4B5B900843A21 /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7934C17A4B5B900843A21 /* XMLWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6CF7935817A4CC8400843A21 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7935017A4CC8400843A21 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6CF7935917A4CC8400843A21 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7935317A4CC8400843A21 /* TBXML+Compression.m */; };
+		6CF7935A17A4CC8400843A21 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7935517A4CC8400843A21 /* TBXML+HTTP.m */; };
+		6CF7935B17A4CC8400843A21 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7935717A4CC8400843A21 /* TBXML.m */; };
+		6CF7935D17A4CF7100843A21 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF7935C17A4CF7100843A21 /* libz.dylib */; };
+		6CF7935F17A4D11B00843A21 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF7935E17A4D11B00843A21 /* libicucore.dylib */; };
 		8D587C7417A373ED009E9B64 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7017A373ED009E9B64 /* Transfer.m */; };
 		8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7317A373ED009E9B64 /* LoginViewController.m */; };
 		8D587C7B17A375DC009E9B64 /* LKOAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */; };
@@ -126,6 +134,20 @@
 		6CF7934217A3BB8200843A21 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		6CF7934417A3BB9F00843A21 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		6CF7934517A3BB9F00843A21 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		6CF7934717A4941500843A21 /* Transfer+ParseXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Transfer+ParseXML.h"; sourceTree = "<group>"; };
+		6CF7934817A4941500843A21 /* Transfer+ParseXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Transfer+ParseXML.m"; sourceTree = "<group>"; };
+		6CF7934B17A4B5B900843A21 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
+		6CF7934C17A4B5B900843A21 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
+		6CF7934F17A4CC8400843A21 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		6CF7935017A4CC8400843A21 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		6CF7935217A4CC8400843A21 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
+		6CF7935317A4CC8400843A21 /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+Compression.m"; sourceTree = "<group>"; };
+		6CF7935417A4CC8400843A21 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
+		6CF7935517A4CC8400843A21 /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+HTTP.m"; sourceTree = "<group>"; };
+		6CF7935617A4CC8400843A21 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		6CF7935717A4CC8400843A21 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		6CF7935C17A4CF7100843A21 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		6CF7935E17A4D11B00843A21 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		8D587C6E17A373ED009E9B64 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		8D587C6F17A373ED009E9B64 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
 		8D587C7017A373ED009E9B64 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
@@ -142,6 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF7935F17A4D11B00843A21 /* libicucore.dylib in Frameworks */,
+				6CF7935D17A4CF7100843A21 /* libz.dylib in Frameworks */,
 				6C89109817A36AFB0019CEF8 /* CFNetwork.framework in Frameworks */,
 				6C89109617A36AF00019CEF8 /* Security.framework in Frameworks */,
 				6C89109417A369ED0019CEF8 /* MobileCoreServices.framework in Frameworks */,
@@ -175,6 +199,8 @@
 		6C779B6917A2B8DC00AC2C6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CF7935E17A4D11B00843A21 /* libicucore.dylib */,
+				6CF7935C17A4CF7100843A21 /* libz.dylib */,
 				6C89109717A36AFB0019CEF8 /* CFNetwork.framework */,
 				6C89109517A36AF00019CEF8 /* Security.framework */,
 				6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */,
@@ -216,6 +242,9 @@
 			children = (
 				6C89106117A3558E0019CEF8 /* AFNetworking */,
 				6C89107517A3558E0019CEF8 /* JSBadgeView */,
+				6CF7934E17A4CC8400843A21 /* RegexKitLite */,
+				6CF7935117A4CC8400843A21 /* TBXML */,
+				6CF7934A17A4B5B900843A21 /* XMLWriter */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -350,12 +379,45 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		6CF7934A17A4B5B900843A21 /* XMLWriter */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7934B17A4B5B900843A21 /* XMLWriter.h */,
+				6CF7934C17A4B5B900843A21 /* XMLWriter.m */,
+			);
+			path = XMLWriter;
+			sourceTree = "<group>";
+		};
+		6CF7934E17A4CC8400843A21 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7934F17A4CC8400843A21 /* RegexKitLite.h */,
+				6CF7935017A4CC8400843A21 /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		6CF7935117A4CC8400843A21 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				6CF7935217A4CC8400843A21 /* TBXML+Compression.h */,
+				6CF7935317A4CC8400843A21 /* TBXML+Compression.m */,
+				6CF7935417A4CC8400843A21 /* TBXML+HTTP.h */,
+				6CF7935517A4CC8400843A21 /* TBXML+HTTP.m */,
+				6CF7935617A4CC8400843A21 /* TBXML.h */,
+				6CF7935717A4CC8400843A21 /* TBXML.m */,
+			);
+			path = TBXML;
+			sourceTree = "<group>";
+		};
 		8D587C6D17A373ED009E9B64 /* Client */ = {
 			isa = PBXGroup;
 			children = (
 				8D587C6E17A373ED009E9B64 /* Constant.h */,
 				8D587C6F17A373ED009E9B64 /* Transfer.h */,
 				8D587C7017A373ED009E9B64 /* Transfer.m */,
+				6CF7934717A4941500843A21 /* Transfer+ParseXML.h */,
+				6CF7934817A4941500843A21 /* Transfer+ParseXML.m */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -477,6 +539,12 @@
 				6CF7934017A3BB7600843A21 /* Model.m in Sources */,
 				6CF7934317A3BB8200843A21 /* Util.m in Sources */,
 				6CF7934617A3BB9F00843A21 /* View.m in Sources */,
+				6CF7934917A4941500843A21 /* Transfer+ParseXML.m in Sources */,
+				6CF7934D17A4B5B900843A21 /* XMLWriter.m in Sources */,
+				6CF7935817A4CC8400843A21 /* RegexKitLite.m in Sources */,
+				6CF7935917A4CC8400843A21 /* TBXML+Compression.m in Sources */,
+				6CF7935A17A4CC8400843A21 /* TBXML+HTTP.m in Sources */,
+				6CF7935B17A4CC8400843A21 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +625,7 @@
 				GCC_PREFIX_HEADER = "LKOA4iPhone/LKOA4iPhone-Prefix.pch";
 				INFOPLIST_FILE = "LKOA4iPhone/LKOA4iPhone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -569,6 +638,7 @@
 				GCC_PREFIX_HEADER = "LKOA4iPhone/LKOA4iPhone-Prefix.pch";
 				INFOPLIST_FILE = "LKOA4iPhone/LKOA4iPhone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
