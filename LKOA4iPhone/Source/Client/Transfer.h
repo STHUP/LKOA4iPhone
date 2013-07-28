@@ -14,9 +14,7 @@
 typedef void (^SuccessBlock) (NSDictionary *dic);
 typedef void (^FailureBlock) (AFHTTPRequestOperation *operation, NSError *error);
 
-+ (Transfer *) sharedInstance;
-
-- (void) Transfer:(NSDictionary *) reqDic
++ (void) Transfer:(NSDictionary *) reqDic
           success:(SuccessBlock) success
           failure:(FailureBlock) failure;
 

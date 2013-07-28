@@ -12,33 +12,7 @@
 
 @implementation Transfer
 
-static Transfer  *instance;
-
-+ (Transfer *) sharedInstance
-{
-    @synchronized(self)
-    {
-        if (nil == instance) {
-            instance = [[Transfer alloc] init];
-        }
-    }
-    
-    return instance;
-}
-
-+ (id)allocWithZone:(NSZone *)zone
-{
-    @synchronized(self){
-        if (instance == nil) {
-            instance = [super allocWithZone:zone];
-            return instance;
-        }
-    }
-    
-    return nil;
-}
-
-- (void) Transfer:(NSDictionary *) reqDic
++ (void) Transfer:(NSDictionary *) reqDic
           success:(SuccessBlock) success
           failure:(FailureBlock) failure
 {
@@ -82,8 +56,10 @@ static Transfer  *instance;
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *respXML = [[[operation responseString] stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"] stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-        NSLog(@"response: %@", respXML);
-        success([Transfer ParseXMLWithReqName:[reqDic objectForKey:kMethodName] xmlString:respXML]);
+        NSLog(@"Response: %@", respXML);
+        
+        NSDictionary *dic = [Transfer ParseXMLWithReqName:[reqDic objectForKey:kMethodName] xmlString:respXML];
+        success(dic);
         
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -92,55 +68,6 @@ static Transfer  *instance;
     
     [operation start];
     
-    
-    /***
-    AFXMLRequestOperation *operation =
-    [AFXMLRequestOperation XMLParserRequestOperationWithRequest:request
-                                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, NSXMLParser *XMLParser) {
-                                                            self.successBlock = success;
-                                                            self.respDic = [NSMutableDictionary dictionary];
-                                                            
-                                                            XMLParser.delegate = self;
-                                                            [XMLParser setShouldProcessNamespaces:YES];
-                                                            [XMLParser parse];
-                                                            
-                                                        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, NSXMLParser *XMLParser) {
-                                                            NSLog(@"%@", [NSString stringWithFormat:@"%@",error]);
-                                                            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                                                                         message:[NSString stringWithFormat:@"%@",error]
-                                                                                                        delegate:nil
-                                                                                               cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                                                            [av show];
-                                                        }];
-    
-    
-    [operation start];
-     
-     ****/
 }
-
-
-/***
-#pragma mark - AFXMLRequestOperationDelegate
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict  {
-    NSLog(@"---%@:", elementName);
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    NSLog(@"---%@:", string);
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-     NSLog(@"---%@:", elementName);
-}
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    self.successBlock(self.respDic);
-}
- 
- **/
-
 
 @end
