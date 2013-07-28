@@ -12,7 +12,33 @@
 
 @implementation Transfer
 
-+ (void) Transfer:(NSDictionary *) reqDic
+static Transfer *instance = nil;
+
++ (Transfer *) sharedTransfer
+{
+    @synchronized(self)
+    {
+        if (nil == instance) {
+            instance = [[Transfer alloc] init];
+        }
+    }
+    
+    return instance;
+}
+
++ (id)allocWithZone:(NSZone *)zone
+{
+    @synchronized(self){
+        if (instance == nil) {
+            instance = [super allocWithZone:zone];
+            return instance;
+        }
+    }
+    
+    return nil;
+}
+
+- (void) Transfer:(NSDictionary *) reqDic
           success:(SuccessBlock) success
           failure:(FailureBlock) failure
 {
@@ -58,7 +84,7 @@
         NSString *respXML = [[[operation responseString] stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"] stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
         NSLog(@"Response: %@", respXML);
         
-        NSDictionary *dic = [Transfer ParseXMLWithReqName:[reqDic objectForKey:kMethodName] xmlString:respXML];
+        NSDictionary *dic = [self ParseXMLWithReqName:[reqDic objectForKey:kMethodName] xmlString:respXML];
         success(dic);
         
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {

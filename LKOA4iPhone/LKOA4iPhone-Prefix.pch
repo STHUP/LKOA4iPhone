@@ -18,8 +18,6 @@
     #import "Transfer.h"
 
     #define ARC_ENABLED   1 // For TBXML
-
-
     // TBXML  添加libz.dylib
     // RegexKitLite 添加libicucore.dylib
 

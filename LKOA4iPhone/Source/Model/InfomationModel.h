@@ -1,13 +1,13 @@
 //
-//  Model.h
+//  InfomationModel.h
 //  LKOA4iPhone
 //
-//  Created by  STH on 7/27/13.
+//  Created by  STH on 7/28/13.
 //  Copyright (c) 2013 DHC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Model : NSObject
+@interface InfomationModel : NSObject
 
 @end

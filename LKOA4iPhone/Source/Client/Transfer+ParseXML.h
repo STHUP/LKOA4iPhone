@@ -11,7 +11,7 @@
 
 @interface Transfer (ParseXML)
 
-+ (NSDictionary *) ParseXMLWithReqName:(NSString *) reqName
+- (NSDictionary *) ParseXMLWithReqName:(NSString *) reqName
                            xmlString:(NSString *) xml;
 
 @end

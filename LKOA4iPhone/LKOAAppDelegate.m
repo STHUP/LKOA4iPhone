@@ -43,7 +43,28 @@
         [UserDefaults setObject:@"124.205.53.178:9596" forKey:kHOSTNAME];
         [UserDefaults synchronize];
     }
-
+    
+   // /*****
+    
+     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+     [dic setObject:@"ggxxService.asmx" forKey:kWebServiceName];
+     [dic setObject:@"getxxzzListService" forKey:kMethodName];
+     
+     NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+     [paramDic setObject:[UserDefaults stringForKey:kUSERID]  forKey:@"sUserId"];
+     [paramDic setObject:@"100" forKey:@"PageSize"];
+     
+     [dic setObject:paramDic forKey:kParamName];
+    
+    
+    [[Transfer sharedTransfer] Transfer:dic success:^(NSDictionary *dic) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+     
+     //*****/
+    
     return YES;
 }
 
