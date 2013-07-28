@@ -74,4 +74,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
++(LKOAAppDelegate*)getDelegate{
+    return (LKOAAppDelegate*)[UIApplication sharedApplication].delegate;
+}
 @end

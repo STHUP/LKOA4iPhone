@@ -14,5 +14,5 @@
 @property (strong, nonatomic) UIWindow *window;
 @property(strong, nonatomic) UINavigationController *rootNavigationController;
 
++(LKOAAppDelegate*)getDelegate;
 @end
-//ee
