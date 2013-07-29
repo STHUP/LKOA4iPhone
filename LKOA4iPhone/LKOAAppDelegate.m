@@ -46,16 +46,16 @@
     
    // /*****
     
-     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-     [dic setObject:@"ggxxService.asmx" forKey:kWebServiceName];
-     [dic setObject:@"getxxzzListService" forKey:kMethodName];
-     
-     NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
-     [paramDic setObject:[UserDefaults stringForKey:kUSERID]  forKey:@"sUserId"];
-     [paramDic setObject:@"100" forKey:@"PageSize"];
-     
-     [dic setObject:paramDic forKey:kParamName];
     
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"ShareService.asmx" forKey:kWebServiceName];
+    [dic setObject:@"getFormAttInfo" forKey:kMethodName];
+    
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+    [paramDic setObject:@"1" forKey:@"sFileId"];
+    [paramDic setObject:@"0110" forKey:@"sTypt"];
+    
+    [dic setObject:paramDic forKey:kParamName];
     
     [[Transfer sharedTransfer] Transfer:dic success:^(NSDictionary *dic) {
         

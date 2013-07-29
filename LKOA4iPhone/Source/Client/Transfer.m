@@ -42,7 +42,6 @@ static Transfer *instance = nil;
           success:(SuccessBlock) success
           failure:(FailureBlock) failure
 {
-    
     NSString* (^dic2XML) (void) = ^(void){
         NSMutableString *mutString = [NSMutableString string];
         NSDictionary *tempDic = [reqDic objectForKey:kParamName];
@@ -84,12 +83,11 @@ static Transfer *instance = nil;
         NSString *respXML = [[[operation responseString] stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"] stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
         NSLog(@"Response: %@", respXML);
         
-        NSDictionary *dic = [self ParseXMLWithReqName:[reqDic objectForKey:kMethodName] xmlString:respXML];
-        success(dic);
+        id obj = [self ParseXMLWithReqName:[reqDic objectForKey:kMethodName] xmlString:respXML];
+        success(obj);
         
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        
+        NSLog(@"%@", [NSString stringWithFormat:@"%@",error]);
     }];
     
     [operation start];

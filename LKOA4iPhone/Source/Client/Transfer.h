@@ -11,7 +11,7 @@
 
 @interface Transfer : NSObject <NSXMLParserDelegate>
 
-typedef void (^SuccessBlock) (NSDictionary *dic);
+typedef void (^SuccessBlock) (id obj);
 typedef void (^FailureBlock) (AFHTTPRequestOperation *operation, NSError *error);
 
 + (Transfer *) sharedTransfer;
