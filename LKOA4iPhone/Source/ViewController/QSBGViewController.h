@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface QSBGViewController : UIViewController
+@interface QSBGViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property(nonatomic, strong)UIButton *leftButton;
+@property(nonatomic, strong)UIButton *rightButton;
+@property(assign)BOOL isLeft;
+@property(nonatomic, strong)NSArray *myArray;
+@property(nonatomic, strong)UITableView *myTableView;
+@property(nonatomic, strong)UIImageView *formIV;
+
+@property(nonatomic, strong)UILabel *fileTitleLabel;
+@property(nonatomic, strong)UILabel *fileContentLabel;
+@property(nonatomic, strong)UILabel *fujianLabel;
+
+-(void)navButtonAdd;
 
 @end

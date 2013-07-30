@@ -11,8 +11,12 @@
 #import "QSBGViewController.h"
 #import "ZJXTViewController.h"
 #import "XXZXViewController.h"
-#import "SystemSettingViewController.h"
 #import "XMGLViewController.h"
+#import "XTSZViewController.h"
+#import "DBListViewController.h"
+#import "QSListViewController.h"
+#import "QSBGViewController.h"
+#import "ListViewController.h"
 
 @interface ScrollViewController : UIViewController <UIScrollViewDelegate> {
     
@@ -22,12 +26,12 @@
 @property(nonatomic,strong) UIScrollView *tabBarScroller;
 @property(nonatomic,strong) UIStoryboard *storyBoard;
 
-@property(nonatomic,strong) DBGWViewController *dbTab;
-@property(nonatomic,strong) QSBGViewController *qsTab;
-@property(nonatomic,strong) ZJXTViewController *zjTab;
+@property(nonatomic,strong) DBListViewController *dbTab;
+@property(nonatomic,strong) QSListViewController *qsTab;
+@property(nonatomic,strong) ListViewController *xmTab;
+@property(nonatomic,strong) ListViewController *zjTab;
 @property(nonatomic,strong) XXZXViewController *xxTab;
-@property(nonatomic,strong) SystemSettingViewController *sysTab;
-@property(nonatomic,strong) XMGLViewController *xmTab;
+@property(nonatomic,strong) XTSZViewController *xtTab;
 
 @property(nonatomic,strong) UINavigationController *navFirstTab;
 @property(nonatomic,strong) UINavigationController *navSecondTab;

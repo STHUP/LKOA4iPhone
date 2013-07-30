@@ -20,8 +20,9 @@
 @synthesize qsTab = _qsTab;
 @synthesize zjTab = _zjTab;
 @synthesize xxTab = _xxTab;
-@synthesize sysTab = _sysTab;
 @synthesize xmTab = _xmTab;
+@synthesize xtTab = _xtTab;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -70,7 +71,7 @@
 
 -(void)addButtons {
     
-    NSArray *array = [[NSArray alloc] initWithObjects:@"待办公文", @"请示报告", @"项目管理", @"资金系统", @"信息中心", @"系统设置", nil];
+    NSArray *array = [[NSArray alloc] initWithObjects:@"公文管理", @"请示报告", @"项目管理", @"资金管理", @"信息中心", @"系统设置", nil];
     for(int i =1;i<7;i++) {
         NSString *nomal = [NSString stringWithFormat:@"scroll_icon_n_%d", i];
         UIButton *btn= [UIButton buttonWithType:UIButtonTypeCustom];
@@ -125,6 +126,7 @@
             
         case 1:
             self.navigationItem.title = @"eee";
+//            [self.navigationController pushViewController:self.navFirstTab.navigationController animated:YES];
             [self.view addSubview:self.navFirstTab.view];
             break;
             
@@ -168,8 +170,7 @@
 {
     if (!_navFirstTab) {
         if (!_dbTab) {
-            _dbTab= [[DBGWViewController alloc] init];
-            _dbTab.navigationItem.title = @"firstVC";
+            _dbTab= [[DBListViewController alloc] init];
         }
         _navFirstTab = [[UINavigationController alloc] initWithRootViewController:self.dbTab];
         _navFirstTab.navigationBar.tintColor = [UIColor blackColor];
@@ -184,12 +185,12 @@
 {
     if (!_navSecondTab) {
         if (!_qsTab) {
-            _qsTab = [[QSBGViewController alloc] init];
+            _qsTab = [[QSListViewController alloc] init];
         }
         _navSecondTab = [[UINavigationController alloc] initWithRootViewController:self.qsTab];
         _navSecondTab.navigationBar.tintColor = [UIColor blackColor];
         _navSecondTab.view.frame = rect;
-        _navSecondTab.navigationBar.topItem.title = @"Second Controller";
+        _navSecondTab.navigationBar.topItem.title = @"请示报告";
     }
     return _navSecondTab;
 }
@@ -197,10 +198,11 @@
 - (UINavigationController*) navThirdTab
 {
     if (!_navThirdTab) {
-        if (!_zjTab) {
-            _zjTab = [[ZJXTViewController alloc] init];
+        if (!_xmTab) {
+            _xmTab = [[ListViewController alloc] init];
+            _xmTab.catalogTag = 3;
         }
-        _navThirdTab = [[UINavigationController alloc] initWithRootViewController:self.zjTab];
+        _navThirdTab = [[UINavigationController alloc] initWithRootViewController:self.xmTab];
         _navThirdTab.navigationBar.tintColor = [UIColor blackColor];
         _navThirdTab.navigationBar.topItem.title = @"Third Controller";
         _navThirdTab.view.frame = rect;
@@ -211,10 +213,11 @@
 - (UINavigationController*) navFourthTab
 {
     if (!_navFourthTab) {
-        if (!_xxTab) {
-            _xxTab = [[XXZXViewController alloc] init];
+        if (!_zjTab) {
+            _zjTab = [[ListViewController alloc] init];
+            _zjTab.catalogTag = 4;
         }
-        _navFourthTab = [[UINavigationController alloc] initWithRootViewController:self.xxTab];
+        _navFourthTab = [[UINavigationController alloc] initWithRootViewController:self.zjTab];
         _navFourthTab.navigationBar.tintColor = [UIColor blackColor];
         _navFourthTab.view.frame = rect;
         _navFourthTab.navigationBar.topItem.title = @"Fourth Controller";
@@ -225,13 +228,13 @@
 - (UINavigationController*) navFifthTab
 {
     if (!_navFifthTab) {
-        if (!_sysTab) {
-            _sysTab = [[SystemSettingViewController alloc] init];
+        if (!_xxTab) {
+            _xxTab = [[XXZXViewController alloc] init];
         }
-        _navFifthTab = [[UINavigationController alloc] initWithRootViewController:self.sysTab];
+        _navFifthTab = [[UINavigationController alloc] initWithRootViewController:self.xxTab];
         _navFifthTab.navigationBar.tintColor = [UIColor blackColor];
         _navFifthTab.view.frame = rect;
-        _navFifthTab.navigationBar.topItem.title = @"Fifth Controller";
+        _navFifthTab.navigationBar.topItem.title = @"信息中心";
     }
     return _navFifthTab;
 }
@@ -239,15 +242,15 @@
 - (UINavigationController*) navSixthTab
 {
     if (!_navSixthTab) {
-        if (!_xmTab) {
-            _xmTab = [[XMGLViewController alloc] init];
+        if (!_xtTab) {
+            _xtTab = [[XTSZViewController alloc] init];
         }
-        _navSixthTab = [[UINavigationController alloc] initWithRootViewController:self.xmTab];
-        _navSixthTab.navigationBar.tintColor = [UIColor blackColor];
-        _navSixthTab.view.frame = rect;
-        _navSixthTab.navigationBar.topItem.title = @"Sixth Controller";
+        _navFifthTab = [[UINavigationController alloc] initWithRootViewController:self.xtTab];
+        _navFifthTab.navigationBar.tintColor = [UIColor blackColor];
+        _navFifthTab.view.frame = rect;
+        _navFifthTab.navigationBar.topItem.title = @"Fifth Controller";
     }
-    return _navSixthTab;
+    return _navFifthTab;
 }
 
 

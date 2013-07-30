@@ -1,11 +1,11 @@
 //
-//  CheckViewController.m
+//  CheckViewController.m 
 //  LKOA4iPhone
 //
 //  Created by liao jia on 13-7-28.
 //  Copyright (c) 2013年 DHC. All rights reserved.
 //
-
+//签核
 #import "CheckViewController.h"
 
 #define H 220
@@ -34,6 +34,8 @@
     self.navigationItem.title = @"签核";
     self.hasCheckButton = NO;
     self.hasHomeButton = YES;
+
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
     [scrollView setContentSize:CGSizeMake(320, 600)];
@@ -112,12 +114,12 @@
 
 -(IBAction)agreeAction:(id)sender
 {
-    
+    [_adviceTV setText:@"同意"];
 }
 
 -(IBAction)readAction:(id)sender
 {
-    
+    [_adviceTV setText:@"阅"];
 }
 
 -(IBAction)commitAction:(id)sender

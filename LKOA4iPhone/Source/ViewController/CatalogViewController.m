@@ -8,7 +8,7 @@
 
 #import "CatalogViewController.h"
 #import "JSBadgeView.h"
-#import "SystemSettingViewController.h"
+#import "XTSZViewController.h"
 #import "ScrollViewController.h"
 
 #define X 34
@@ -42,7 +42,7 @@
     [logoIV setUserInteractionEnabled:YES];
     [self.view addSubview:logoIV];
     
-    NSArray *array = [NSArray arrayWithObjects:@"待办公文", @"请示报告", @"项目管理", @"资金系统", @"信息中心", @"系统设置", nil];
+    NSArray *array = [NSArray arrayWithObjects:@"公文管理", @"请示报告", @"项目管理", @"资金管理", @"信息中心", @"系统设置", nil];
     for (int j = 0; j<2; j++) {
         for (int i = 0; i<3; i++) {
             NSString *nomal = [NSString stringWithFormat:@"catalog_n_%d", (i+1)+3*j];
@@ -92,7 +92,7 @@
     switch (((UIButton*)sender).tag) {
         case 1006:
         {
-            SystemSettingViewController *vc = [[SystemSettingViewController alloc] init];
+            XTSZViewController *vc = [[XTSZViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
