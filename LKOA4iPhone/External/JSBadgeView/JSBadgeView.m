@@ -63,6 +63,8 @@
 @synthesize badgeTextShadowOffset = _badgeTextShadowOffset;
 @synthesize badgeTextFont = _badgeTextFont;
 @synthesize badgeBackgroundColor = _badgeBackgroundColor;
+@synthesize topRightX = _topRightX;
+@synthesize topRightY = _topRightY;
 
 - (void)awakeFromNib
 {
@@ -81,8 +83,10 @@
     return self;
 }
 
-- (id)initWithParentView:(UIView *)parentView alignment:(JSBadgeViewAlignment)alignment
+- (id)initWithParentView:(UIView *)parentView alignment:(JSBadgeViewAlignment)alignment topRightX:(int) x topRightY:(int) y
 {
+    _topRightX = x;
+    _topRightY = y;
     if ((self = [self initWithFrame:CGRectZero]))
     {
         self.badgeAlignment = alignment;
@@ -129,8 +133,8 @@
             newFrame.origin.y = -viewHeight / 2.0f;
             break;
         case JSBadgeViewAlignmentTopRight:
-            newFrame.origin.x = superviewWidth - (viewWidth / 2.0f);
-            newFrame.origin.y = -viewHeight / 2.0f;
+            newFrame.origin.x = superviewWidth - (viewWidth / 2.0f) + _topRightX;
+            newFrame.origin.y = -viewHeight / 2.0f + _topRightY;
             break;
         case JSBadgeViewAlignmentTopCenter:
             newFrame.origin.x = (superviewWidth - viewWidth) / 2.0f;
