@@ -505,7 +505,6 @@
 		6C779B5E17A2B8DC00AC2C6C = {
 			isa = PBXGroup;
 			children = (
-				8DB78A4817A556D70028BC54 /* QuartzCore.framework */,
 				6C779B7017A2B8DD00AC2C6C /* LKOA4iPhone */,
 				6C779B6917A2B8DC00AC2C6C /* Frameworks */,
 				6C779B6817A2B8DC00AC2C6C /* Products */,
@@ -525,6 +524,7 @@
 			children = (
 				6CF7935E17A4D11B00843A21 /* libicucore.dylib */,
 				6CF7935C17A4CF7100843A21 /* libz.dylib */,
+				8DB78A4817A556D70028BC54 /* QuartzCore.framework */,
 				6C89109717A36AFB0019CEF8 /* CFNetwork.framework */,
 				6C89109517A36AF00019CEF8 /* Security.framework */,
 				6C89109317A369ED0019CEF8 /* MobileCoreServices.framework */,
@@ -1163,7 +1163,6 @@
 				8D587C7E17A37693009E9B64 /* BaseViewController.m in Sources */,
 				6CF7933D17A3BB4C00843A21 /* Cell.m in Sources */,
 				6CF7934617A3BB9F00843A21 /* View.m in Sources */,
-<<<<<<< HEAD
 				6CF7934917A4941500843A21 /* Transfer+ParseXML.m in Sources */,
 				6CF7934D17A4B5B900843A21 /* XMLWriter.m in Sources */,
 				6CF7935817A4CC8400843A21 /* RegexKitLite.m in Sources */,
