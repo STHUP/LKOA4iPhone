@@ -11,13 +11,13 @@
 
 @interface Transfer : NSObject <NSXMLParserDelegate>
 
-typedef void (^SuccessBlock) (NSDictionary *dic);
+typedef void (^SuccessBlock) (id obj);
+typedef void (^FailureBlock) (AFHTTPRequestOperation *operation, NSError *error);
 
-@property (nonatomic, strong) SuccessBlock successBlock;
++ (Transfer *) sharedTransfer;
 
-+ (Transfer *) sharedInstance;
 - (void) Transfer:(NSDictionary *) reqDic
           success:(SuccessBlock) success
-          failure:(NSError *) failure;
+          failure:(FailureBlock) failure;
 
 @end

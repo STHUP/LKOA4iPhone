@@ -44,6 +44,29 @@
         [UserDefaults synchronize];
     }
     
+   // /*****
+    
+    
+//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//    [dic setObject:@"WorkFlowService.asmx" forKey:kWebServiceName];
+//    [dic setObject:@"IOS_submitFile" forKey:kMethodName];
+//    
+//    NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+//    [paramDic setObject:@"1" forKey:@"sFileId"];
+//    [paramDic setObject:@"1" forKey:@"sRecId"];
+//    [paramDic setObject:[UserDefaults stringForKey:kUSERID] forKey:@"sUserId"];
+//    [paramDic setObject:@"已阅" forKey:@"sContent"];
+//    
+//    [dic setObject:paramDic forKey:kParamName];
+//    
+//    [[Transfer sharedTransfer] Transfer:dic success:^(NSDictionary *dic) {
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//    }];
+    
+     //*****/
+    
     return YES;
 }
 

@@ -21,3 +21,5 @@
 #define kMethodName                     @"methodName"
 #define kParamName                      @"paramName"
 
+#define kUSERID                         @"userId"
+

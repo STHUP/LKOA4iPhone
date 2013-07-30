@@ -15,5 +15,11 @@
     #import <SystemConfiguration/SystemConfiguration.h>
 
     #import "Constant.h"
+    #import "Transfer.h"
+
+    #define ARC_ENABLED   1 // For TBXML
+    // TBXML  添加libz.dylib
+    // RegexKitLite 添加libicucore.dylib
+
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #endif
