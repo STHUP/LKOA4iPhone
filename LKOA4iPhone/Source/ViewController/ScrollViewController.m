@@ -42,7 +42,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 -(void)setup {
@@ -128,6 +128,7 @@
             self.navigationItem.title = @"eee";
 //            [self.navigationController pushViewController:self.navFirstTab.navigationController animated:YES];
             [self.view addSubview:self.navFirstTab.view];
+            ((BaseViewController*)self.navFirstTab.navigationController).scrollVC = self;
             break;
             
         case 2:

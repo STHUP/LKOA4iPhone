@@ -23,7 +23,8 @@
 }
 
 @property(nonatomic, strong)NSMutableArray *myArray;
-@property(nonatomic, strong)UITableView *myTableView;
+@property(nonatomic, strong)UITableView *leftTableView;
+@property(nonatomic, strong)UITableView  *rightTableView;
 
 @property (nonatomic, strong) UIView *refreshFooterView;
 @property (nonatomic, strong) UILabel *refreshLabel;

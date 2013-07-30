@@ -50,6 +50,7 @@
 	// Do any additional setup after loading the view.
     NSLog(@"title: %@", [LKOAAppDelegate getDelegate].rootNavigationController.navigationItem.title);
     [[LKOAAppDelegate getDelegate].rootNavigationController setNavigationBarHidden:YES animated:YES ];
+    [self.navigationController setNavigationBarHidden:NO];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.hasCheckButton = YES;
     self.hasHomeButton = YES;
