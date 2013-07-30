@@ -48,12 +48,14 @@
     
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"ShareService.asmx" forKey:kWebServiceName];
-    [dic setObject:@"getFormAttInfo" forKey:kMethodName];
+    [dic setObject:@"WorkFlowService.asmx" forKey:kWebServiceName];
+    [dic setObject:@"IOS_submitFile" forKey:kMethodName];
     
     NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
     [paramDic setObject:@"1" forKey:@"sFileId"];
-    [paramDic setObject:@"0110" forKey:@"sTypt"];
+    [paramDic setObject:@"1" forKey:@"sRecId"];
+    [paramDic setObject:[UserDefaults stringForKey:kUSERID] forKey:@"sUserId"];
+    [paramDic setObject:@"已阅" forKey:@"sContent"];
     
     [dic setObject:paramDic forKey:kParamName];
     

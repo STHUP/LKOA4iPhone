@@ -9,6 +9,7 @@
 #import "Transfer+ParseXML.h"
 #import "TBXML.h"
 #import "FileModel.h"
+#import "LocusModel.h"
 #import "InfomationModel.h"
 #import "NotificationModel.h"
 
@@ -18,6 +19,12 @@
 - (NSDictionary *) login:(TBXMLElement *) bodyElement;
 // 获取待办公文列表及请示报告列表
 - (NSDictionary *) getPendingFilesList:(TBXMLElement *) bodyElement;
+// 获取文件标题
+- (FileModel *) getFileDetail:(TBXMLElement *) bodyElement;
+// 获取办理轨迹列表
+- (NSArray *) getLocusList:(TBXMLElement *) bodyElement;
+// 签核提交
+- (NSString *) submitFile:(TBXMLElement *) bodyElement;
 // 获取信息中心最新信息列表，同时也用于取得数量
 - (NSArray *) getLatestInfo:(TBXMLElement *) bodyElement;
 // 获取信息中心最新通知列表，同时也用于取得数量
@@ -148,7 +155,7 @@
  [paramDic setObject:@"N" forKey:@"sFileType"]; // 请示报告是00， 待办公文是N
  [paramDic setObject:@"1" forKey:@"sPageNo"];
  [paramDic setObject:@"20" forKey:@"sPageSize"];
- [paramDic setObject:@"1=1" forKey:@"sWhere"];
+ [paramDic setObject:@"" forKey:@"sWhere"];
  
  [dic setObject:paramDic forKey:kParamName];
  
@@ -248,6 +255,83 @@
     [dic setObject:array forKey:@"content"];
     
     return dic;
+}
+
+// 获取文件标题
+
+/****
+ Request XML Sample:
+ 
+ NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+ [dic setObject:@"WorkFlowService.asmx" forKey:kWebServiceName];
+ [dic setObject:@"getFileTitle" forKey:kMethodName];
+ 
+ NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+ [paramDic setObject:@"1" forKey:@"sFileId"];
+ 
+ [dic setObject:paramDic forKey:kParamName];
+ 
+ ***/
+
+/******
+ Response XML Sample:
+ 
+ 
+ 
+ 
+ ******/
+
+- (FileModel *) getFileDetail:(TBXMLElement *) bodyElement
+{
+    return nil;
+}
+
+// 获取办理轨迹列表
+
+/******
+ Request XML Sample:
+ 
+ NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+ [dic setObject:@"WorkFlowService.asmx" forKey:kWebServiceName];
+ [dic setObject:@"getMarkingList" forKey:kMethodName];
+ 
+ NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+ [paramDic setObject:@"1" forKey:@"sFileId"];
+ 
+ [dic setObject:paramDic forKey:kParamName];
+ 
+ ******/
+
+/****
+ 
+ ****/
+
+- (NSArray *) getLocusList:(TBXMLElement *) bodyElement
+{
+    
+    return nil;
+}
+
+// 签核提交
+/****
+ Request XML Sample:
+ 
+ NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+ [dic setObject:@"WorkFlowService.asmx" forKey:kWebServiceName];
+ [dic setObject:@"IOS_submitFile" forKey:kMethodName];
+ 
+ NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+ [paramDic setObject:@"1" forKey:@"sFileId"];
+ [paramDic setObject:@"1" forKey:@"sRecId"];
+ [paramDic setObject:[UserDefaults stringForKey:kUSERID] forKey:@"sUserId"];
+ [paramDic setObject:@"已阅" forKey:@"sContent"];
+ 
+ [dic setObject:paramDic forKey:kParamName];
+ 
+ ***/
+- (NSString *) submitFile:(TBXMLElement *) bodyElement
+{
+    return nil;
 }
 
 // 获取信息中心最新信息列表

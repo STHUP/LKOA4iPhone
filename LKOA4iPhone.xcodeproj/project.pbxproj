@@ -65,6 +65,7 @@
 		6CF7936817A663A200843A21 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7936717A663A200843A21 /* DateUtil.m */; };
 		6CF7936B17A6687900843A21 /* AttachmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7936A17A6687900843A21 /* AttachmentModel.m */; };
 		6CF7936E17A6751400843A21 /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7936D17A6751300843A21 /* FileModel.m */; };
+		6CF7937117A6C16A00843A21 /* LocusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7937017A6C16A00843A21 /* LocusModel.m */; };
 		8D587C7417A373ED009E9B64 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7017A373ED009E9B64 /* Transfer.m */; };
 		8D587C7517A373ED009E9B64 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7317A373ED009E9B64 /* LoginViewController.m */; };
 		8D587C7B17A375DC009E9B64 /* LKOAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D587C7A17A375DC009E9B64 /* LKOAAppDelegate.m */; };
@@ -157,6 +158,8 @@
 		6CF7936A17A6687900843A21 /* AttachmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentModel.m; sourceTree = "<group>"; };
 		6CF7936C17A6751300843A21 /* FileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
 		6CF7936D17A6751300843A21 /* FileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
+		6CF7936F17A6C16A00843A21 /* LocusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocusModel.h; sourceTree = "<group>"; };
+		6CF7937017A6C16A00843A21 /* LocusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocusModel.m; sourceTree = "<group>"; };
 		8D587C6E17A373ED009E9B64 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		8D587C6F17A373ED009E9B64 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
 		8D587C7017A373ED009E9B64 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 				6CF7936A17A6687900843A21 /* AttachmentModel.m */,
 				6CF7936C17A6751300843A21 /* FileModel.h */,
 				6CF7936D17A6751300843A21 /* FileModel.m */,
+				6CF7936F17A6C16A00843A21 /* LocusModel.h */,
+				6CF7937017A6C16A00843A21 /* LocusModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				6CF7936817A663A200843A21 /* DateUtil.m in Sources */,
 				6CF7936B17A6687900843A21 /* AttachmentModel.m in Sources */,
 				6CF7936E17A6751400843A21 /* FileModel.m in Sources */,
+				6CF7937117A6C16A00843A21 /* LocusModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
