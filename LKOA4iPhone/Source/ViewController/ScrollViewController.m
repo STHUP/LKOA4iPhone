@@ -22,6 +22,7 @@
 @synthesize xxTab = _xxTab;
 @synthesize xmTab = _xmTab;
 @synthesize xtTab = _xtTab;
+@synthesize tagVC = _tagVC;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,12 +38,13 @@
     [super viewDidLoad];
     [self setup];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 -(void)setup {
@@ -65,7 +67,7 @@
     // FirstTabController, 2 - SecondTabcontroller
     // By default first tab controller is set a rootcontroller
     
-    [self tabCall:1];
+    [self tabCall:_tagVC];
     
 }
 
@@ -128,7 +130,6 @@
             self.navigationItem.title = @"eee";
 //            [self.navigationController pushViewController:self.navFirstTab.navigationController animated:YES];
             [self.view addSubview:self.navFirstTab.view];
-            ((BaseViewController*)self.navFirstTab.navigationController).scrollVC = self;
             break;
             
         case 2:
@@ -172,6 +173,7 @@
     if (!_navFirstTab) {
         if (!_dbTab) {
             _dbTab= [[DBListViewController alloc] init];
+            _dbTab.scrollVC = self;
         }
         _navFirstTab = [[UINavigationController alloc] initWithRootViewController:self.dbTab];
         _navFirstTab.navigationBar.tintColor = [UIColor blackColor];
@@ -187,6 +189,7 @@
     if (!_navSecondTab) {
         if (!_qsTab) {
             _qsTab = [[QSListViewController alloc] init];
+            _qsTab.scrollVC = self;
         }
         _navSecondTab = [[UINavigationController alloc] initWithRootViewController:self.qsTab];
         _navSecondTab.navigationBar.tintColor = [UIColor blackColor];
@@ -201,6 +204,7 @@
     if (!_navThirdTab) {
         if (!_xmTab) {
             _xmTab = [[ListViewController alloc] init];
+            _xmTab.scrollVC = self;
             _xmTab.catalogTag = 3;
         }
         _navThirdTab = [[UINavigationController alloc] initWithRootViewController:self.xmTab];
@@ -216,6 +220,7 @@
     if (!_navFourthTab) {
         if (!_zjTab) {
             _zjTab = [[ListViewController alloc] init];
+            _zjTab.scrollVC = self;
             _zjTab.catalogTag = 4;
         }
         _navFourthTab = [[UINavigationController alloc] initWithRootViewController:self.zjTab];
@@ -231,6 +236,7 @@
     if (!_navFifthTab) {
         if (!_xxTab) {
             _xxTab = [[XXZXViewController alloc] init];
+            _xxTab.scrollVC = self;
         }
         _navFifthTab = [[UINavigationController alloc] initWithRootViewController:self.xxTab];
         _navFifthTab.navigationBar.tintColor = [UIColor blackColor];
@@ -245,6 +251,7 @@
     if (!_navSixthTab) {
         if (!_xtTab) {
             _xtTab = [[XTSZViewController alloc] init];
+            _xtTab.scrollVC = self;
         }
         _navFifthTab = [[UINavigationController alloc] initWithRootViewController:self.xtTab];
         _navFifthTab.navigationBar.tintColor = [UIColor blackColor];

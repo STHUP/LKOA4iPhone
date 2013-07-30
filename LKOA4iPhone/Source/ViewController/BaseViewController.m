@@ -10,6 +10,7 @@
 #import "DBListViewController.h"
 #import "LKOAAppDelegate.h"
 #import "ScrollViewController.h"
+#import "CatalogViewController.h"
 #define kSCNavBarImageTag       10
 
 @interface BaseViewController ()
@@ -216,20 +217,11 @@
 
 -(IBAction)backBUttonAction:(id)sender
 {
-    NSLog(@"back:  %@", ((UIViewController*)[self.navigationController.viewControllers objectAtIndex:0]).class);
-//    if ([((UIViewController*)[self.navigationController.viewControllers objectAtIndex:0]) isKindOfClass:[DBListViewController class]]) {
-////        [((UIViewController*)[self.navigationController.viewControllers objectAtIndex:0]).navigationController popToRootViewControllerAnimated:YES];
-//        for (int i = 0 ; i<[[LKOAAppDelegate getDelegate].rootNavigationController.viewControllers count]; i++) {
-//            NSLog(@"vcs : %@", ((UIViewController*)[[LKOAAppDelegate getDelegate].rootNavigationController.navigationController.viewControllers objectAtIndex:i]).class);
-//            
-//        }
-//        ;
-//        
-//    }
-//    [self.navigationController popViewControllerAnimated:YES];
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-//    [self.scrollVC.navigationController popViewControllerAnimated:YES];
-    
+    if (self.scrollVC) {
+        [self.scrollVC.navigationController popViewControllerAnimated:YES];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 -(IBAction)homeAction:(id)sender

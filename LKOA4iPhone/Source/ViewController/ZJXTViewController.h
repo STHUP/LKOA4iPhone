@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ZJXTViewController : UIViewController
+#import "BaseViewController.h"
+@interface ZJXTViewController : BaseViewController
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-
+//@class ScrollViewController;
 @interface DBListViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
 {
     UIView *refreshFooterView;
@@ -23,8 +23,7 @@
 }
 
 @property(nonatomic, strong)NSMutableArray *myArray;
-@property(nonatomic, strong)UITableView *leftTableView;
-@property(nonatomic, strong)UITableView  *rightTableView;
+@property(nonatomic, strong)UITableView *myTableView;
 
 @property (nonatomic, strong) UIView *refreshFooterView;
 @property (nonatomic, strong) UILabel *refreshLabel;
@@ -35,6 +34,7 @@
 @property (nonatomic, strong) NSString *textLoading;
 @property (nonatomic, strong) NSString *textNoMore;
 @property (nonatomic) BOOL hasMore;
+//@property (nonatomic, strong)ScrollViewController *scrollVC;
 
 - (void)setupStrings;
 - (void)addPullToRefreshFooter;

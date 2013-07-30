@@ -9,11 +9,11 @@
 #import "DBListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "DBGWViewController.h"
+#import "CatalogViewController.h"
+#import "ScrollViewController.h"
 
 #define CELL_HEIGHT 84
 #define REFRESH_HEADER_HEIGHT 15.0f
-#define LEFTTABLEVIEW 1001
-#define RIGHTTABLEVIEW 1002
 
 @interface DBListViewController ()
 
@@ -21,9 +21,10 @@
 
 @implementation DBListViewController
 
-@synthesize leftTableView = _leftTableView;
-@synthesize rightTableView = _rightTableView;
+@synthesize myArray = _myArray;
+@synthesize myTableView = _myTableView;
 @synthesize textPull, textRelease, textLoading, refreshFooterView, refreshLabel, refreshArrow, refreshSpinner, hasMore, textNoMore;
+//@synthesize scrollVC = _scrollVC;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,28 +42,20 @@
 	// Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
-//    [[LKOAAppDelegate getDelegate].rootNavigationController setNavigationBarHidden:YES animated:YES ];
-    [self.navigationController setNavigationBarHidden:YES];
+    [[LKOAAppDelegate getDelegate].rootNavigationController setNavigationBarHidden:YES animated:YES ];
+//    [self.navigationController setNavigationBarHidden:NO];
     
     _myArray = [[NSMutableArray alloc] initWithObjects:@"关于转发国资委加强中英名保企业安全生产工作的紧急通知", @"关于转发国资委加强中英名保企业安全生产工作的紧急通知", @"关于转发国资委加强中英名保企业安全生产工作的紧急通知", @"关于转发国资委加强中英名保企业安全生产工作的紧急通知。", @"12", @"12",@"1234", @"12344", nil];
     
-    _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 10, 310, 325) style:UITableViewStyleGrouped];
-    _leftTableView.delegate = self;
-    _leftTableView.dataSource = self;
-    [_leftTableView setBackgroundColor:[UIColor clearColor]];
+    _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 10, 310, 325) style:UITableViewStyleGrouped];
+    _myTableView.delegate = self;
+    _myTableView.dataSource = self;
+    [_myTableView setBackgroundColor:[UIColor clearColor]];
     UIView *nullView = [[UIView alloc] init];
-    [_leftTableView setBackgroundView:nullView];
-    [_leftTableView setTag:LEFTTABLEVIEW];
-    [self.view addSubview:_leftTableView];
-
-    _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 10, 310, 325) style:UITableViewStyleGrouped];
-    _rightTableView.delegate = self;
-    _rightTableView.dataSource = self;
-    [_rightTableView setBackgroundColor:[UIColor clearColor]];
-    UIView *nullView2 = [[UIView alloc] init];
-    [_rightTableView setBackgroundView:nullView2];
-    [_rightTableView setTag:RIGHTTABLEVIEW];
-    [self.view addSubview:_rightTableView];
+    [_myTableView setBackgroundView:nullView];
+    
+    
+    [self.view addSubview:_myTableView];
     
 }
 
@@ -297,15 +290,17 @@
     // Don't forget to call stopLoading at the end.
     [_myArray addObject:@"23456"];
     [_myArray addObject:@"999"];
-    [_leftTableView reloadData];
+    [_myTableView reloadData];
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 }
 
--(IBAction)backBUttonAction:(id)sender
-{
-    NSLog(@"ddd");
-//    [self.navigationController popViewControllerAnimated:YES];
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-
-}
+//-(IBAction)backBUttonAction:(id)sender
+//{
+//    NSLog(@"ddd");
+////    CatalogViewController *vc = [[CatalogViewController alloc] init];
+////    [self.navigationController pushViewController:vc animated:YES];
+//
+////    [self.scrollVC.navigationController popViewControllerAnimated:YES];
+//
+//}
 @end

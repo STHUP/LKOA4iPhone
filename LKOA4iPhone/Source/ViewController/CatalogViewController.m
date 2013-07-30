@@ -34,7 +34,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.navigationItem.title = @"主界面";
+    self.navigationItem.title = @"中交路桥";
+    self.navigationItem.hidesBackButton = YES;
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"catalog_bg"]];
     UIImageView *logoIV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
@@ -88,23 +89,8 @@
 
 -(IBAction)catalogButtonAction:(id)sender
 {
-    NSLog(@"tag: %d", ((UIButton*)sender).tag);
-    switch (((UIButton*)sender).tag) {
-        case 1006:
-        {
-            XTSZViewController *vc = [[XTSZViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 1005:
-        {
-            ScrollViewController *vc = [[ScrollViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-            
-        default:
-            break;
-    }
+    ScrollViewController *vc = [[ScrollViewController alloc] init];
+    vc.tagVC = ((UIButton*)sender).tag - 1000;
+    [ApplicationDelegate.rootNavigationController pushViewController:vc animated:YES];
 }
 @end

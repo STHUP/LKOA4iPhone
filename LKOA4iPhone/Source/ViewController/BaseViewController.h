@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @class ScrollViewController;
-
 @interface BaseViewController : UIViewController<UITextFieldDelegate>
 
 
 
 @property(nonatomic, assign)BOOL hasCheckButton;
 @property(nonatomic, assign)BOOL hasHomeButton;
-@property(nonatomic, assign)ScrollViewController *scrollVC;
+@property(nonatomic, strong)ScrollViewController *scrollVC;
 @end

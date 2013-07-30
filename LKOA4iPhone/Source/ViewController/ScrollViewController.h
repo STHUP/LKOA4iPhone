@@ -40,4 +40,6 @@
 @property(nonatomic,strong) UINavigationController *navFifthTab;
 @property(nonatomic,strong) UINavigationController *navSixthTab;
 
+@property(nonatomic, assign)int tagVC;
+
 @end

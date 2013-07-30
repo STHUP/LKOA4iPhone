@@ -12,9 +12,9 @@
 #import <QuartzCore/QuartzCore.h>
 #define HEIGHT 20
 #define CELL_HEIGHT 50
-#define NAME_H 22
-#define NAME_X 170
-#define TITLE_H 5
+#define NAME_H 15
+#define NAME_X 130
+#define TITLE_H 10
 #define R_TITLE_X 90
 #define WIDTH 180
 
@@ -27,8 +27,10 @@
 @synthesize leftButton = _leftButton;
 @synthesize rightButton = _rightButton;
 @synthesize  isLeft = _isLeft;
-@synthesize myArray = _myArray;
-@synthesize myTableView = _myTableView;
+@synthesize leftArray = _leftArray;
+@synthesize rightArray = _rightArray;
+@synthesize leftTableView = _leftTableView;
+@synthesize rightTableView = _rightTableView;
 @synthesize formIV = _formIV;
 @synthesize fileTitleLabel = _fileTitleLabel;
 @synthesize fileContentLabel = _fileContentLabel;
@@ -50,7 +52,8 @@
 	// Do any additional setup after loading the view.
     NSLog(@"title: %@", [LKOAAppDelegate getDelegate].rootNavigationController.navigationItem.title);
     [[LKOAAppDelegate getDelegate].rootNavigationController setNavigationBarHidden:YES animated:YES ];
-    [self.navigationController setNavigationBarHidden:NO];
+
+//    [self.navigationController setNavigationBarHidden:YES];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.hasCheckButton = YES;
     self.hasHomeButton = YES;
@@ -123,8 +126,9 @@
 -(IBAction)leftAction:(id)sender
 {
     _isLeft = YES;
-    [_myTableView removeFromSuperview];
-    [self.view addSubview:_formIV];
+    [_rightTableView removeFromSuperview];
+    [self.view addSubview:_leftTableView];
+    [_leftTableView reloadData];
     
     [_leftButton setBackgroundImage:[UIImage imageNamed:@"item_n_left"] forState:UIControlStateNormal];
     [_leftButton setBackgroundImage:[UIImage imageNamed:@"item_n_left"] forState:UIControlStateSelected];
@@ -138,9 +142,9 @@
 -(IBAction)rightAction:(id)sender
 {
     _isLeft = NO;
-    [_formIV removeFromSuperview];
-    [self.view addSubview:_myTableView];
-    [_myTableView reloadData];
+    [_leftTableView removeFromSuperview];
+    [self.view addSubview:_rightTableView];
+    [_rightTableView reloadData];
     
     [_leftButton setBackgroundImage:[UIImage imageNamed:@"item_s_left"] forState:UIControlStateNormal];
     [_leftButton setBackgroundImage:[UIImage imageNamed:@"item_s_left"] forState:UIControlStateSelected];
@@ -152,7 +156,10 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_myArray count];
+    if (self.isLeft) {
+        return [_leftArray count];
+    }
+    return [_rightArray count];
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -176,27 +183,61 @@
     {
         [view removeFromSuperview];
     }
+    if (self.isLeft) {
+        NSString *title = [_leftArray objectAtIndex:indexPath.row];
+        UILabel *titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, TITLE_H, 80, 25)];
+        [titlelabel setText:title];
+        titlelabel.lineBreakMode = UILineBreakModeWordWrap;
+        titlelabel.numberOfLines = 0;
+        [titlelabel setBackgroundColor:[UIColor redColor]];
+        [titlelabel setTextAlignment:UITextAlignmentCenter];
+        [titlelabel setFont:[UIFont systemFontOfSize:15]];
+        [cell.contentView addSubview:titlelabel];
+        
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(NAME_X, NAME_H, 180, 40)];
+        [label setFont:[UIFont systemFontOfSize:13]];
+        if (indexPath.row != 0) {
+            [label setTextColor:[UIColor blueColor]];
+        }else{
+            [label setTextColor:[UIColor blackColor]];
+        }
+        label.lineBreakMode = UILineBreakModeWordWrap;
+        label.numberOfLines = 0;
+        [label setBackgroundColor:[UIColor yellowColor]];
+        [label setFont:[UIFont systemFontOfSize:14]];
+        UIFont *font = [UIFont systemFontOfSize:14];
+        CGSize size = [((NSString*)[_leftArray objectAtIndex:indexPath.row]) sizeWithFont:font constrainedToSize:CGSizeMake(180.0f, 2000.0f)
+                              lineBreakMode:UILineBreakModeWordWrap];
+        CGRect rect=label.frame;
+        rect.size=size;
+        [label setFrame:rect];
+        [label setText:((NSString*)[_leftArray objectAtIndex:indexPath.row])];
+        [cell.contentView addSubview:label];
+
+    }else{
+        NSString *title = [_rightArray objectAtIndex:indexPath.row];
+        UILabel *titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, TITLE_H, 150, 40)];
+        [titlelabel setText:title];
+        titlelabel.lineBreakMode = UILineBreakModeWordWrap;
+        titlelabel.numberOfLines = 0;
+        [titlelabel setBackgroundColor:[UIColor clearColor]];
+        [titlelabel setTextAlignment:UITextAlignmentLeft];
+        [titlelabel setFont:[UIFont systemFontOfSize:15]];
+        [cell.contentView addSubview:titlelabel];
+        
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(NAME_X, NAME_H, 80, 25)];
+        [nameLabel setText:@"刘凤山"];
+        [nameLabel setFont:[UIFont systemFontOfSize:13]];
+        [cell.contentView addSubview:nameLabel];
+        
+        UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(NAME_X + 55, NAME_H, 100, 25)];
+        [timeLabel setText:@"2013-05-05"];
+        [timeLabel setFont:[UIFont systemFontOfSize:13]];
+        [timeLabel setTextColor:[UIColor blueColor]];
+        [cell.contentView addSubview:timeLabel];
+    }
     
-    NSString *title = [_myArray objectAtIndex:indexPath.row];
-    UILabel *titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, TITLE_H, 150, 40)];
-    [titlelabel setText:title];
-    titlelabel.lineBreakMode = UILineBreakModeWordWrap;
-    titlelabel.numberOfLines = 0;
-    [titlelabel setBackgroundColor:[UIColor clearColor]];
-    [titlelabel setTextAlignment:UITextAlignmentLeft];
-    [titlelabel setFont:[UIFont systemFontOfSize:15]];
-    [cell.contentView addSubview:titlelabel];
-    
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(NAME_X, NAME_H, 80, 25)];
-    [nameLabel setText:@"刘凤山"];
-    [nameLabel setFont:[UIFont systemFontOfSize:13]];
-    [cell.contentView addSubview:nameLabel];
-    
-    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(NAME_X + 55, NAME_H, 100, 25)];
-    [timeLabel setText:@"2013-05-05"];
-    [timeLabel setFont:[UIFont systemFontOfSize:13]];
-    [timeLabel setTextColor:[UIColor blueColor]];
-    [cell.contentView addSubview:timeLabel];
     
     return cell;
 }
@@ -227,74 +268,84 @@
     [_rightButton setBackgroundImage:[UIImage imageNamed:@"item_s_right"] forState:UIControlStateNormal];
     [self.view addSubview:_rightButton];
     
-    _formIV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"form"]];
-    [_formIV setFrame:CGRectMake(17, HEIGHT+54, 286, 249)];
-    [self.view addSubview:_formIV];
+//    _formIV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"form"]];
+//    [_formIV setFrame:CGRectMake(17, HEIGHT+54, 286, 249)];
+//    [self.view addSubview:_formIV];
+//    
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 22, 70, 25)];
+//    [titleLabel setBackgroundColor:[UIColor clearColor]];
+//    [titleLabel setText:@"文件标题"];
+//    [titleLabel setTextAlignment:NSTextAlignmentCenter];
+//    [titleLabel setFont:[UIFont systemFontOfSize:14]];
+//    [_formIV addSubview:titleLabel];
+//    
+//    _fileTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(R_TITLE_X, 13, WIDTH, 40)];
+//    [_fileTitleLabel setBackgroundColor:[UIColor clearColor]];
+//    [_fileTitleLabel setText:@"文件标题"];
+//    [_fileTitleLabel setTextAlignment:NSTextAlignmentCenter];
+//    [_fileTitleLabel setFont:[UIFont systemFontOfSize:14]];
+//    _fileTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
+//    _fileTitleLabel.numberOfLines = 0;
+//    [_fileTitleLabel setTextAlignment:UITextAlignmentLeft];
+//    [_formIV addSubview:_fileTitleLabel];
+//    
+//    //
+//    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 70, 25)];
+//    [contentLabel setBackgroundColor:[UIColor clearColor]];
+//    [contentLabel setText:@"文件正文"];
+//    [contentLabel setTextAlignment:NSTextAlignmentCenter];
+//    [contentLabel setFont:[UIFont systemFontOfSize:14]];
+//    [_formIV addSubview:contentLabel];
+//    
+//    _fileContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(R_TITLE_X, 75, WIDTH, 45)];
+//    [_fileContentLabel setBackgroundColor:[UIColor clearColor]];
+//    [_fileContentLabel setText:@"文件标题正文文件标题正文文件标题正.doc"];
+//    [_fileContentLabel setTextAlignment:NSTextAlignmentCenter];
+//    [_fileContentLabel setFont:[UIFont systemFontOfSize:14]];
+//    _fileContentLabel.lineBreakMode = UILineBreakModeWordWrap;
+//    _fileContentLabel.numberOfLines = 0;
+//    [_fileContentLabel setTextColor:[UIColor blueColor]];
+//    [_fileContentLabel setTextAlignment:UITextAlignmentLeft];
+//    [_formIV addSubview:_fileContentLabel];
+//    
+//    //
+//    UILabel *fujianLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 135, 70, 25)];
+//    [fujianLabel setBackgroundColor:[UIColor clearColor]];
+//    [fujianLabel setText:@"附件"];
+//    [fujianLabel setTextAlignment:NSTextAlignmentCenter];
+//    [fujianLabel setFont:[UIFont systemFontOfSize:14]];
+//    [_formIV addSubview:fujianLabel];
+//    
+//    _fujianLabel = [[UILabel alloc] initWithFrame:CGRectMake(R_TITLE_X, 135, WIDTH, 40)];
+//    [_fujianLabel setBackgroundColor:[UIColor clearColor]];
+//    [_fujianLabel setText:@"附件附件附件附件附件附件附件附件.doc"];
+//    [_fujianLabel setTextAlignment:NSTextAlignmentCenter];
+//    [_fujianLabel setFont:[UIFont systemFontOfSize:14]];
+//    _fujianLabel.lineBreakMode = UILineBreakModeWordWrap;
+//    _fujianLabel.numberOfLines = 0;
+//    [_fujianLabel setTextAlignment:UITextAlignmentLeft];
+//    [_formIV addSubview:_fujianLabel];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 22, 70, 25)];
-    [titleLabel setBackgroundColor:[UIColor clearColor]];
-    [titleLabel setText:@"文件标题"];
-    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:[UIFont systemFontOfSize:14]];
-    [_formIV addSubview:titleLabel];
     
-    _fileTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(R_TITLE_X, 13, WIDTH, 40)];
-    [_fileTitleLabel setBackgroundColor:[UIColor clearColor]];
-    [_fileTitleLabel setText:@"文件标题"];
-    [_fileTitleLabel setTextAlignment:NSTextAlignmentCenter];
-    [_fileTitleLabel setFont:[UIFont systemFontOfSize:14]];
-    _fileTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
-    _fileTitleLabel.numberOfLines = 0;
-    [_fileTitleLabel setTextAlignment:UITextAlignmentLeft];
-    [_formIV addSubview:_fileTitleLabel];
-    
-    //
-    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 70, 25)];
-    [contentLabel setBackgroundColor:[UIColor clearColor]];
-    [contentLabel setText:@"文件正文"];
-    [contentLabel setTextAlignment:NSTextAlignmentCenter];
-    [contentLabel setFont:[UIFont systemFontOfSize:14]];
-    [_formIV addSubview:contentLabel];
-    
-    _fileContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(R_TITLE_X, 75, WIDTH, 45)];
-    [_fileContentLabel setBackgroundColor:[UIColor clearColor]];
-    [_fileContentLabel setText:@"文件标题正文文件标题正文文件标题正.doc"];
-    [_fileContentLabel setTextAlignment:NSTextAlignmentCenter];
-    [_fileContentLabel setFont:[UIFont systemFontOfSize:14]];
-    _fileContentLabel.lineBreakMode = UILineBreakModeWordWrap;
-    _fileContentLabel.numberOfLines = 0;
-    [_fileContentLabel setTextColor:[UIColor blueColor]];
-    [_fileContentLabel setTextAlignment:UITextAlignmentLeft];
-    [_formIV addSubview:_fileContentLabel];
-    
-    //
-    UILabel *fujianLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 135, 70, 25)];
-    [fujianLabel setBackgroundColor:[UIColor clearColor]];
-    [fujianLabel setText:@"附件"];
-    [fujianLabel setTextAlignment:NSTextAlignmentCenter];
-    [fujianLabel setFont:[UIFont systemFontOfSize:14]];
-    [_formIV addSubview:fujianLabel];
-    
-    _fujianLabel = [[UILabel alloc] initWithFrame:CGRectMake(R_TITLE_X, 135, WIDTH, 40)];
-    [_fujianLabel setBackgroundColor:[UIColor clearColor]];
-    [_fujianLabel setText:@"附件附件附件附件附件附件附件附件.doc"];
-    [_fujianLabel setTextAlignment:NSTextAlignmentCenter];
-    [_fujianLabel setFont:[UIFont systemFontOfSize:14]];
-    _fujianLabel.lineBreakMode = UILineBreakModeWordWrap;
-    _fujianLabel.numberOfLines = 0;
-    [_fujianLabel setTextAlignment:UITextAlignmentLeft];
-    [_formIV addSubview:_fujianLabel];
-    
+    //文件信息
+    _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 75, 300, 250) style:UITableViewStylePlain];
+    _leftTableView.delegate = self;
+    _leftTableView.dataSource = self;
+    _leftTableView.layer.borderWidth = 1;
+    _leftTableView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _leftTableView.layer.cornerRadius = 8.0;
+    [self.view addSubview:_leftTableView];
     
     //办理轨迹
-    _myTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 75, 300, 250) style:UITableViewStylePlain];
-    _myTableView.delegate = self;
-    _myTableView.dataSource = self;
-    _myTableView.layer.borderWidth = 1;
-    _myTableView.layer.borderColor = [[UIColor grayColor] CGColor];
-    _myTableView.layer.cornerRadius = 8.0;
+    _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 75, 300, 250) style:UITableViewStylePlain];
+    _rightTableView.delegate = self;
+    _rightTableView.dataSource = self;
+    _rightTableView.layer.borderWidth = 1;
+    _rightTableView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _rightTableView.layer.cornerRadius = 8.0;
     
-    
-    _myArray = [NSArray arrayWithObjects:@"请信息中心阅示", @"请赵总阅示", @"请公司阅示，各个部门阅示", @"阅。", @"阅。", @"阅。", nil];
+    _leftArray = [NSArray arrayWithObjects:@"文件标题23dfdfddsscdscddfdscdc", @"文件正文", @"附件", @"附件", @"附件", @"附件", nil];
+    _rightArray = [NSArray arrayWithObjects:@"请信息中心阅示", @"请赵总阅示", @"请公司阅示，各个部门阅示", @"阅。", @"阅。", @"阅。", nil];
 }
+
 @end

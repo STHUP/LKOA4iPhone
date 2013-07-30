@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface XMGLViewController : UIViewController
+#import "BaseViewController.h"
+@interface XMGLViewController : BaseViewController
 
 @end

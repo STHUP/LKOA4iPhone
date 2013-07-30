@@ -152,7 +152,8 @@
 {
     QSBGViewController *vc = [[QSBGViewController alloc] init];
     vc.title = @"请示报告";
-    [self.navigationController pushViewController:vc animated:YES];
+    [ApplicationDelegate.rootNavigationController pushViewController:vc animated:YES];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)setupStrings{
